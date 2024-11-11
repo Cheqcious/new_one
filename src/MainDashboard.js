@@ -11,7 +11,7 @@ import Building from './components/Building';
 
 const DashboardContainer = styled.div`
   display: grid;
-  grid-template-rows: auto repeat(3, 1fr); /* 增加一行用于标题 */
+  grid-template-rows: auto 1fr 1fr 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   background-color: #1b2a3d;
@@ -23,6 +23,20 @@ const DashboardContainer = styled.div`
     "ecoBenefits siteMap weatherInfo"
     "ecoBenefits siteMap building"
     "EnergyDataMonitor renewableEnergyForecast HistoryData";
+
+  /* 添加响应式设计 */
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "ecoBenefits"
+      "weatherInfo"
+      "siteMap"
+      "building"
+      "EnergyDataMonitor"
+      "renewableEnergyForecast"
+      "HistoryData";
+  }
 `;
 
 // 新增的标题样式
@@ -31,17 +45,16 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #00ffcc; /* 绿色科技感的颜色 */
-  font-size: 50px;
+  color: #00ffcc;
+  font-size: 4vw; /* 使用相对单位来适应不同屏幕 */
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 255, 204, 0.7), 0 0 20px rgba(0, 255, 204, 0.4);
-  background-color: #112233; /* 标题背景色 */
+  background-color: #112233;
   padding: 10px;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
 
-  /* 顶部的两条直线 */
   &::before,
   &::after {
     content: '';
@@ -52,25 +65,22 @@ const StyledHeader = styled.div`
     background: linear-gradient(to right, #00ffcc, #3498db);
   }
 
-  /* 左侧的直线 */
   &::before {
     left: 0;
   }
 
-  /* 右侧的直线 */
   &::after {
     right: 0;
   }
 
-  /* 左边三条斜杠 */
   & .left-stripes,
   & .right-stripes {
     position: absolute;
-    top: 30;
+    top: 30px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100%; /* 使斜杠占满整个模块高度 */
+    height: 100%;
   }
 
   & .left-stripes {
@@ -84,52 +94,78 @@ const StyledHeader = styled.div`
   }
 
   & .stripe {
-    width: 300px; /* 调整斜杠的长度 */
-    height: 25px;
+    width: 20vw; /* 调整长度为视口宽度的相对值 */
+    height: 3vh; /* 使用相对视口高度的单位 */
     background: linear-gradient(to right, #00ffcc, #3498db);
-   
   }
 
-  /* 日期样式 */
   & .current-date {
     position: absolute;
-    bottom: 10px; /* 右下角位置 */
+    bottom: 10px;
     right: 20px;
-    font-size: 18px;
+    font-size: 2vw; /* 使用相对单位 */
     color: #00ffcc;
   }
 `;
 
 const StyledEcoBenefits = styled.div`
   grid-area: ecoBenefits;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledWeatherInfo = styled.div`
   grid-area: weatherInfo;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledBuilding = styled.div`
   grid-area: building;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledSiteMap = styled.div`
   grid-area: siteMap;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledRenewableEnergyForecast = styled.div`
   grid-area: renewableEnergyForecast;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledEnergyDataMonitor = styled.div`
   grid-area: EnergyDataMonitor;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const StyledHistoryData = styled.div`
   grid-area: HistoryData;
+  padding: 10px;
+  @media (max-width: 1024px) {
+    padding: 5px;
+  }
 `;
 
 const MainDashboard = () => {
-  const currentDate = new Date().toISOString().slice(0, 10); // 获取当前日期
+  const currentDate = new Date().toISOString().slice(0, 10);
 
   return (
     <DashboardContainer>
