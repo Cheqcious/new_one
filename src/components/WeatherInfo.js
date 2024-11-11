@@ -12,7 +12,7 @@ const WeatherInfoContainer = styled.div`
   color: #ecf0f1;
 `;
 const WeatherDescription = styled.div`
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   color: white; 
   font-weight: bold;
   font-style: italic; /* 让文字变为斜体 */
@@ -29,11 +29,11 @@ const WeatherIcon = styled.div`
 `;
 
 const TempText = styled.div`
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #00bfff;
 `;
 const TempText1 = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #00bfff;
 `;
 const AirQuality = styled.div`
@@ -43,13 +43,23 @@ const AirQuality = styled.div`
 `;
 
 const AQTitle = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #00bfff;
 `;
 
 const PollutantBarChart = styled.div`
   width: 100%;
   margin-top: 10px;
+`;
+
+const Title = styled.div`
+ background: linear-gradient(to right,#70A1D7, #2C3E50); /* 渐变蓝色，从深到浅 */
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 20px;
 `;
 
 // PM2.5 数据
@@ -69,6 +79,8 @@ const pollutantData = [
 const WeatherInfo = () => {
   return (
     <WeatherInfoContainer>
+      <Title>》天气与排放</Title>
+      
       {/* 第一行：天气信息 */}
       <Row>
         <WeatherIcon>⛅</WeatherIcon>
@@ -82,14 +94,14 @@ const WeatherInfo = () => {
       <Row>
         <AirQuality>
           <AQTitle>PM2.5</AQTitle>
-          <PieChart width={100} height={100}>
+          <PieChart width={200} height={200}>
             <Pie
               data={pmData}
               dataKey="value"
               cx="50%"
               cy="50%"
-              innerRadius={30}
-              outerRadius={40}
+              innerRadius={50}
+              outerRadius={70}
               startAngle={90}
               endAngle={310}
               paddingAngle={5}
@@ -105,10 +117,10 @@ const WeatherInfo = () => {
 
        {/* 排放指标 */}
        <PollutantBarChart>
-          <BarChart width={300} height={120} data={pollutantData} layout="vertical" barCategoryGap="20%">
+          <BarChart width={350} height={180} data={pollutantData} layout="vertical" barCategoryGap="20%">
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" />
-            <YAxis type="category" dataKey="name" />
+            <YAxis type="category" dataKey="name" width={50} /> 
             <Tooltip />
             <Bar dataKey="value">
               {pollutantData.map((entry, index) => (
