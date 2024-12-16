@@ -84,9 +84,9 @@ const WeatherInfo = () => {
       {/* 第一行：天气信息 */}
       <Row>
         <WeatherIcon>⛅</WeatherIcon>
-        <TempText>24°C  </TempText>
+        <TempText>11°C  </TempText>
         <div><WeatherDescription>  多云（实时）</WeatherDescription></div>
-        <div><WeatherDescription>全天温度</WeatherDescription> <TempText1>21-33°C</TempText1></div>
+        <div><WeatherDescription>全天温度</WeatherDescription> <TempText1>3-15°C</TempText1></div>
         <div><WeatherDescription>西南风 3-4级</WeatherDescription></div>
       </Row>
 
