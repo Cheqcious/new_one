@@ -120,15 +120,15 @@ const Title = styled.div`
 const LowCarbonEconomyModule = () => {
   // 示例数据
   const indicatorsData = [
-    { title: '运行天数', value: '114514 天' },
+    { title: '运行天数', value: '308 天' },
     { title: 'CO₂ 减排总量', value: '52,899 kg' },
-    { title: '可再生能源使用比例', value: '24.84%' },
+    { title: '可再生能源使用比例', value: '81.84%' },
     { title: '累计节约成本', value: '¥1,435,642' },
   ];
 
   const carbonNeutralMethods = [
     { name: '清洁能源中和', value: '10.3吨', percentage: '100%' },
-    { name: '优化供应中和', value: '0吨', percentage: '0%' },
+    { name: '优化供应中和', value: '1.5吨', percentage: '0%' },
     { name: '碳利用中和', value: '0吨', percentage: '0%' },
     { name: '碳补偿中和', value: '0吨', percentage: '0%' },
   ];
@@ -141,7 +141,7 @@ const LowCarbonEconomyModule = () => {
 
   return (
     <ModuleContainer>
-      <Title>总体低碳经济及环保效益</Title>
+      <Title>》总体低碳经济及环保效益</Title>
       
       {/* 顶部四个指标 */}
       <IndicatorContainer>
@@ -157,7 +157,7 @@ const LowCarbonEconomyModule = () => {
       <CarbonNeutralContainer>
       
       <CarbonNeutralTitle><LeafIcon />   碳中和总量</CarbonNeutralTitle>
-        <IndicatorValue>10.3 吨</IndicatorValue>
+        <IndicatorValue>11.8 吨</IndicatorValue>
 
         {/* 中和方法 */}
         <MethodContainer>
