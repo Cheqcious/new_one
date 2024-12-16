@@ -92,30 +92,30 @@ const EnergyDataMonitor = () => {
 
   const dayData = {
     left: [
-      { title: '火电', value: '40861706.7 kWh' },
-      { title: '天然气', value: '4472万立方米' },
-      { title: '汽油', value: '40.1 吨' },
-      { title: '柴油', value: '18.4 吨' },
+      { title: '火电', value: '40861.7 kWh' },
+      { title: '天然气', value: '4472立方米' },
+      { title: '汽油', value: '8.1 吨' },
+      { title: '柴油', value: '1.4 吨' },
     ],
     right: [
-      { title: '绿电', value: '5898633.4 kWh' },
-      { title: '水', value: '199974.5 吨' },
-      { title: '机油', value: '75.6 吨' },
+      { title: '绿电', value: '5898.4 kWh' },
+      { title: '水', value: '0 吨' },
+      { title: '机油', value: '7.6 吨' },
       { title: '煤', value: '0 吨' },
     ],
   };
 
   const monthData = {
     left: [
-      { title: '火电', value: '1225851200 kWh' },
-      { title: '天然气', value: '134160万立方米' },
-      { title: '汽油', value: '1203 吨' },
-      { title: '柴油', value: '552 吨' },
+      { title: '火电', value: '122580 kWh' },
+      { title: '天然气', value: '13416立方米' },
+      { title: '汽油', value: '120 吨' },
+      { title: '柴油', value: '42 吨' },
     ],
     right: [
-      { title: '绿电', value: '176959002 kWh' },
-      { title: '水', value: '5999235 吨' },
-      { title: '机油', value: '2268 吨' },
+      { title: '绿电', value: '17695 kWh' },
+      { title: '水', value: '0 吨' },
+      { title: '机油', value: '22 吨' },
       { title: '煤', value: '0 吨' },
     ],
   };
